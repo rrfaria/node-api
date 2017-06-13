@@ -3,10 +3,11 @@ import fs from 'fs';
 import path from 'path';
 
 let database =null;
+
 const loadModels = (sequelize) =>{
     const dir = path.join(__dirname, '../models');
     let models =[];
-    fs.readdirSync(dir).forEach(file=>{
+    fs.readdirSync(dir).forEach(file => {
         const modelDir =path.join(dir,file),
         model = sequelize.import(modelDir);
         models[model.name] =model;

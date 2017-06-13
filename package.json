@@ -6,7 +6,7 @@
   "author": "rafael Faria",
   "license": "MIT",
   "scripts": {
-    "start": "babel-core index.js",
+    "start": "npm run babel-core index.js",
     "test-integration": "mocha --opts test/integration/mocha.opts test/integration/*.js"
   },
   "repository": {
