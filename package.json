@@ -25,6 +25,7 @@
     "sqlite3": "^3.1.8"
   },
   "devDependencies": {
+    "body-parser": "^1.17.2",
     "chai": "^4.0.2",
     "mocha": "^3.4.2",
     "supertest": "^3.0.0"

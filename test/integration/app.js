@@ -35,4 +35,22 @@ describe('Route Books', ()=>{
                 });
         });
     });
+
+    describe('Route POST /books',()=>{
+        it('Should create a book', done =>{
+            const newBook ={
+                id:2,
+                name: 'newBook'
+            };
+
+            request
+            .post('/books')
+            .send(newBook)
+            .end((err,res)=>{
+                expect(res.body.id).to.be.eql(defaultBook.name);
+                expect(res.body.id).to.be.eql(defaultBook.id);
+                done(err);
+            });
+        });
+    });
 });
