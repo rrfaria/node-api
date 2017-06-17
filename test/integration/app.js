@@ -29,7 +29,7 @@ describe('Route Books', ()=>{
                 request
                 .get('/books/1')
                 .end((err,res)=>{
-                    expect(res.body.id).to.be.eql(defaultBook.name);
+                    expect(res.body.name).to.be.eql(defaultBook.name);
                     expect(res.body.id).to.be.eql(defaultBook.id);
                     done(err);
                 });
@@ -47,9 +47,38 @@ describe('Route Books', ()=>{
             .post('/books')
             .send(newBook)
             .end((err,res)=>{
-                expect(res.body.id).to.be.eql(defaultBook.name);
-                expect(res.body.id).to.be.eql(defaultBook.id);
+                expect(res.body.name).to.be.eql(newBook.name);
+                expect(res.body.id).to.be.eql(newBook.id);
                 done(err);
+            });
+        });
+    });
+
+    describe('Route PUT /books/{id}',()=>{
+        it('Should update a book', done =>{
+            const updatedBook ={
+                id:1,
+                name: 'newBook'
+            };
+
+            request
+            .put('/books/1')
+            .send(updatedBook)
+            .end((err,res)=>{
+                //console.log(res.body); me mostra o que esta sendo retornado
+                expect(res.body).to.be.eql([1]);// se retornar 1 significa que foi atualizado.
+                done(err);
+            });
+        });
+    });
+
+    describe('Route PUT /books/{id}',()=>{
+        it('Should delete a book', done =>{
+           request
+            .delete('/books/1')
+            .end((err,res)=>{
+                //console.log(res); me mostra o que esta sendo retornado
+                expect(res.statusCode).to.be.eql(204);// espera que o retorno seja um 204 no content 
             });
         });
     });
