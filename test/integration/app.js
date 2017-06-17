@@ -79,6 +79,7 @@ describe('Route Books', ()=>{
             .end((err,res)=>{
                 //console.log(res); me mostra o que esta sendo retornado
                 expect(res.statusCode).to.be.eql(204);// espera que o retorno seja um 204 no content 
+                done(err);
             });
         });
     });
