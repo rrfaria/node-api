@@ -8,8 +8,8 @@
   "scripts": {
     "start": "babel-node index.js",
     "test-integration": "mocha --opts test/integration/mocha.opts test/integration/*.js",
-    "lint":"eslint '**/*.js'",
-    "lint:fix":"eslint '**/*.js' --fix"
+    "lint": "eslint '**/*.js'",
+    "lint:fix": "eslint '**/*.js' --fix"
   },
   "repository": {
     "type": "git",
