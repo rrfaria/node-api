@@ -1,0 +1,21 @@
+{
+    "extends":"airbnb",
+    "rules":{
+        "indent": [ 2, 4 ],
+        "semi":2,
+        "import/no-extraneous-dependencies":[
+            "error",{
+                "devDependencies":true
+            }
+        ],
+         "linebreak-style": ["error", "windows"]
+    },
+    "globals":{
+        "describe": true,
+        "it":true,
+        "expect":true,
+        "app":true,
+        "request":true,
+        "beforeEach":true
+    }
+}

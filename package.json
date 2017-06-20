@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "start": "babel-node index.js",
-    "test-integration": "mocha --opts test/integration/mocha.opts test/integration/*.js"
+    "test-integration": "mocha --opts test/integration/mocha.opts test/integration/*.js",
+    "lint":"eslint '**/*.js'",
+    "lint:fix":"eslint '**/*.js' --fix"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,11 @@
   "devDependencies": {
     "body-parser": "^1.17.2",
     "chai": "^4.0.2",
+    "eslint": "3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "5.0.1",
+    "eslint-plugin-react": "7.0.1",
     "mocha": "^3.4.2",
     "supertest": "^3.0.0"
   }
