@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "babel-node index.js",
-    "test-integration": "mocha --opts test/integration/mocha.opts test/integration/*.js",
-    "test-unit": "mocha --opts test/unit/mocha.opts test/unit/**/*.js",
+    "test-integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/*.js",
+    "test-unit": "NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/**/*.js",
     "lint": "eslint '**/*.js'",
     "lint:fix": "eslint '**/*.js' --fix"
   },
