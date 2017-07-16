@@ -6,9 +6,9 @@
   "author": "rafael Faria",
   "license": "MIT",
   "scripts": {
-    "start": "babel-node index.js",
-    "test-integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/*.js",
-    "test-unit": "NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/**/*.js",
+    "start": "set NODE_ENV=prod && babel-node index.js",
+    "test-integration": "set NODE_ENV=dev && mocha --opts test/integration/mocha.opts test/integration/*.js",
+    "test-unit": "set NODE_ENV=dev && mocha --opts test/unit/mocha.opts test/unit/**/*.js",
     "lint": "eslint '**/*.js'",
     "lint:fix": "eslint '**/*.js' --fix"
   },
@@ -35,6 +35,8 @@
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "5.0.1",
     "eslint-plugin-react": "7.0.1",
+    "joi": "^10.6.0",
+    "joi-assert": "^0.0.3",
     "mocha": "^3.4.2",
     "supertest": "^3.0.0",
     "testdouble": "^3.2.2"
