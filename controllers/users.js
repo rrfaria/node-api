@@ -8,38 +8,38 @@ const errorResponse = (message, statusCode = HttpStatus.BAD_REQUEST) => defaultR
     error: message,
 }, statusCode);
 
-export default class BooksController {
-    constructor(Books) {
-        this.Books = Books;
+export default class UsersController {
+    constructor(Users) {
+        this.Users = Users;
     }
 
     getAll() {
-        return this.Books.findAll({})
+        return this.Users.findAll({})
         .then(result => defaultResponse(result))
         .catch(error => errorResponse(error.message));
     }
 
     getById(params) {
-        return this.Books.findOne({ where: params })
+        return this.Users.findOne({ where: params })
         .then(result => defaultResponse(result))
         .catch(error => errorResponse(error.message));
     }
 
     create(data) {
-        return this.Books.create(data)
+        return this.Users.create(data)
         .then(result => defaultResponse(result, HttpStatus.CREATED)) // 201 um recurso foi criado
         .catch(error => errorResponse(error.message, HttpStatus.UNPROCESSABLE_ENTITY)); // 402 entidade nao pode ser processada
     }
 
     update(data, params) {
-        return this.Books.update(data, {
+        return this.Users.update(data, {
             where: params,
         }).then(result => defaultResponse(result))
         .catch(error => errorResponse(error.message, HttpStatus.UNPROCESSABLE_ENTITY)); // 402 entidade nao pode ser processada
     }
 
     delete(params) {
-        return this.Books.destroy({
+        return this.Users.destroy({
             where: params,
         }).then(result => defaultResponse(result, HttpStatus.NO_CONTENT))
         .catch(error => errorResponse(error.message, HttpStatus.UNPROCESSABLE_ENTITY)); // 402 entidade nao pode ser processada

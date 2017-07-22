@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "set NODE_ENV=prod && babel-node index.js",
-    "test-integration": "set NODE_ENV=dev && mocha --opts test/integration/mocha.opts test/integration/*.js",
+    "test-integration": "set NODE_ENV=dev && mocha --opts test/integration/mocha.opts test/integration/**/*.js",
     "test-unit": "set NODE_ENV=dev && mocha --opts test/unit/mocha.opts test/unit/**/*.js",
     "test-contract": "set NODE_ENV=dev && mocha --opts test/contracts/mocha.opts test/contracts/contracts/*.js",
     "lint": "eslint '**/*.js'",
@@ -29,6 +29,7 @@
     "sqlite3": "^3.1.8"
   },
   "devDependencies": {
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
     "chai": "^4.0.2",
     "eslint": "3.19.0",
@@ -36,6 +37,7 @@
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "5.0.1",
     "eslint-plugin-react": "7.0.1",
+    "http-status": "^1.0.1",
     "joi": "^10.6.0",
     "joi-assert": "^0.0.3",
     "mocha": "^3.4.2",
