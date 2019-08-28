@@ -1,6 +1,6 @@
 import BooksController from '../../../controllers/books';
 
-console.log(process.env.NODE_ENV);
+// console.log(process.env.NODE_ENV);
 describe('Controllers :Books', () => {
   describe('Get all books: getAll()', () => {
     it('should return a list of books', () => {
@@ -17,7 +17,8 @@ describe('Controllers :Books', () => {
 
       td.when(Books.findAll({})).thenResolve(expectedResponse);
       const booksController = new BooksController(Books);
-      return booksController.getAll().then(response => expect(response.data).to.be.equals(expectedResponse));
+      return booksController.getAll()
+        .then(response => expect(response.data).to.be.equals(expectedResponse));
     });
   });
   describe('Get all books: getById()', () => {
@@ -35,7 +36,8 @@ describe('Controllers :Books', () => {
 
       td.when(Books.findOne({ where: { id: 1 } })).thenResolve(expectedResponse);
       const booksController = new BooksController(Books);
-      return booksController.getById({ id: 1 }).then(response => expect(response.data).to.be.equals(expectedResponse));
+      return booksController.getById({ id: 1 })
+        .then(response => expect(response.data).to.be.equals(expectedResponse));
     });
   });
   describe('Create a book: create()', () => {
