@@ -1,5 +1,5 @@
 describe('Route Users', () => {
-  const Users = app.datasource.models.Users;
+  const { Users } = app.datasource.models;
   const defaultUser = {
     id: 1,
     name: 'Default USer',

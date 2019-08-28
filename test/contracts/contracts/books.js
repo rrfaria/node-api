@@ -1,5 +1,5 @@
 describe('Route Books', () => {
-  const Books = app.datasource.models.Books;
+  const { Books } = app.datasource.models;
   const defaultBook = {
     id: 1,
     name: 'Default Book',
@@ -19,8 +19,8 @@ describe('Route Books', () => {
         id: Joi.number(),
         name: Joi.string(),
         description: Joi.string(),
-        created_at: Joi.date().iso(),
-        updated_at: Joi.date().iso(),
+        createdAt: Joi.date().iso(),
+        updatedAt: Joi.date().iso(),
       }));
 
       request
@@ -38,8 +38,8 @@ describe('Route Books', () => {
         id: Joi.number(),
         name: Joi.string(),
         description: Joi.string(),
-        created_at: Joi.date().iso(),
-        updated_at: Joi.date().iso(),
+        createdAt: Joi.date().iso(),
+        updatedAt: Joi.date().iso(),
       });
 
       request
@@ -63,8 +63,8 @@ describe('Route Books', () => {
         id: Joi.number(),
         name: Joi.string(),
         description: Joi.string(),
-        created_at: Joi.date().iso(),
-        updated_at: Joi.date().iso(),
+        createdAt: Joi.date().iso(),
+        updatedAt: Joi.date().iso(),
       });
 
       request
