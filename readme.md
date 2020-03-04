@@ -7,3 +7,4 @@
 - Contract test
 - Unit test
 - Integration test
+- slack bot
