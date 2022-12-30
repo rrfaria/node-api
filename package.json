@@ -55,7 +55,7 @@
     "husky": "^4.2.3",
     "joi": "^14.3.1",
     "joi-assert": "^0.0.3",
-    "mocha": "^7.1.0",
+    "mocha": "^10.2.0",
     "nodemon": "^2.0.2",
     "supertest": "^4.0.2",
     "testdouble": "^3.13.0"
